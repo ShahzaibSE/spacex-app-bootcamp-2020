@@ -2,9 +2,6 @@ let cache_name = "spacex_cache"
 let urlsToCache = [
     '/',
     'index.html',
-    '/logo192.png',
-    '/logo512.png',
-    '/favicon.ico',
     '/static/js/bundle.js',
     '/static/js/main.chunk.js',
     '/static/js/0.chunk.js',
