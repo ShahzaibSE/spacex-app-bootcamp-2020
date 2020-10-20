@@ -3,7 +3,6 @@ import gql from "graphql-tag"
 export const query_launch_list = gql `
     query launches{
         launches {
-            id
             details
             launch_date_local
             launch_date_unix
