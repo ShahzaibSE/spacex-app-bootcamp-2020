@@ -8,7 +8,7 @@ const GridComponent = () => {
         <div>
             <Grid container>
                 <Grid item sm={12} md={12} lg={12}>
-                    <LaunchList/>
+                    {/* <LaunchList/> */}
                 </Grid>
             </Grid>
         </div>

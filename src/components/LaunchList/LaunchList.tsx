@@ -1,9 +1,18 @@
-import React from 'react'
+import React,{FC} from 'react'
+import Proptypes from "prop-types"
 import Grid from "@material-ui/core/Grid"
 // Component.
 import Launch from "../Launch/Launch"
+// graphql.
+import {LaunchesQuery} from "../../generated/graphql"
 
-const LaunchList = () => {
+type LaunchListProps = {
+    data: LaunchesQuery
+}
+
+const LaunchList: FC<LaunchListProps> = ({data}:any) => {
+    console.log("Launches list sent as props")
+    console.log(data)
     return (
         <div>
             <Grid container>
