@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 // Components.
-import GridComponent from "./components/Grid/Grid"
+import GridComponent from "./components/Grid/GridComponent"
 
 function App() {
   return (
