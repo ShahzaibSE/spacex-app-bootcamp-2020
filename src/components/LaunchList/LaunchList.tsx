@@ -24,7 +24,7 @@ const LaunchList: FC<LaunchListProps> = ({data}:any) => {
                                                     transform:{initial:'scale(1)',onHover:'scale(1.1)'},
                                                     opacity: {initial:'1',onHover:'1'}
                                                 }}>
-                            <Launch/>   
+                            <Launch data={data}/>   
                         </AnimationWrapper>    
                     </Grid>
             </Grid>
