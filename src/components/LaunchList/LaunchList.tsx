@@ -13,8 +13,9 @@ type LaunchListProps = {
 }
 
 const LaunchList: FC<LaunchListProps> = ({data}:any) => {
+    let {launches} = data
     console.log("Launches list sent as props")
-    console.log(data)
+    console.log(launches)
     return (
         <div className="launch_list_container">
             <Grid container>
