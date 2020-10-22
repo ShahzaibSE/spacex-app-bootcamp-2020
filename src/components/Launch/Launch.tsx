@@ -17,13 +17,14 @@ type LaunchProps = {
 
 const Launch: FC<LaunchProps> = ({data}: any) => {
     const classes = launchCardStyles();
-
+    console.log("Single Launch Information")
+    console.log(data)
     return (
         <Card className={classes.root}>
         <CardActionArea>
-          <CardMedia
+          <CardMedia component="iframe"
             className={classes.media}
-            image={require("../../static/images/rocket.jpg")}
+            src={"https://www.youtube.com/embed/0a_00nJ_Y88".replace("watch?v=", "embed/")}
             title="Batman by Jim Lee"
           />
           <CardContent>

@@ -4,6 +4,7 @@ export const query_launch_list = gql `
     query launches{
         launches {
             details
+            flight_number
             launch_date_local
             launch_date_unix
             launch_date_utc

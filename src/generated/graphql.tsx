@@ -742,7 +742,7 @@ export type LaunchInfoQuery = (
   { __typename?: 'Query' }
   & { launch?: Maybe<(
     { __typename?: 'Launch' }
-    & Pick<Launch, 'launch_date_unix' | 'launch_date_local' | 'launch_date_utc' | 'launch_success' | 'launch_year' | 'details'>
+    & Pick<Launch, 'launch_date_unix' | 'launch_date_local' | 'launch_date_utc' | 'launch_success' | 'launch_year' | 'details' | 'flight_number'>
     & { launch_site?: Maybe<(
       { __typename?: 'LaunchSite' }
       & Pick<LaunchSite, 'site_id' | 'site_name' | 'site_name_long'>
@@ -760,7 +760,7 @@ export type LaunchesQuery = (
   { __typename?: 'Query' }
   & { launches?: Maybe<Array<Maybe<(
     { __typename?: 'Launch' }
-    & Pick<Launch, 'details' | 'launch_date_local' | 'launch_date_unix' | 'launch_date_utc' | 'launch_success' | 'launch_year' | 'mission_id' | 'mission_name'>
+    & Pick<Launch, 'details' | 'flight_number' | 'launch_date_local' | 'launch_date_unix' | 'launch_date_utc' | 'launch_success' | 'launch_year' | 'mission_id' | 'mission_name'>
     & { launch_site?: Maybe<(
       { __typename?: 'LaunchSite' }
       & Pick<LaunchSite, 'site_id' | 'site_name' | 'site_name_long'>
@@ -791,6 +791,7 @@ export const LaunchInfoDocument = gql`
       video_link
     }
     details
+    flight_number
   }
 }
     `;
@@ -824,6 +825,7 @@ export const LaunchesDocument = gql`
     query launches {
   launches {
     details
+    flight_number
     launch_date_local
     launch_date_unix
     launch_date_utc

@@ -19,6 +19,7 @@ export const launch_details = gql `
             video_link
         }
         details
+        flight_number
         }
     }  
 `

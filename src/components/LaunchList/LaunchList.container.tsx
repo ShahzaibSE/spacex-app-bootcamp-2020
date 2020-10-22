@@ -11,7 +11,7 @@ import {launchlist_container_error_message} from "./LaunchList.container.style"
 
 function Alert(props: AlertProps) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
-  }
+}
 
 const LaunchListContainerComponent = () => {
     const { data, error, loading } = useLaunchesQuery()
