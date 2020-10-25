@@ -26,16 +26,12 @@ const Launch: FC<LaunchProps> = ({data}: any) => {
     const create_video_link = (video_id:string) => {
       let hostname = "youtube"
       let video_link = `https://www.${hostname}.com/embed/${video_id}`
-      console.log(`Created video link: ${video_link}`)
       return video_link
     }
 
     if (launch_video_link == null){
-      console.log("Video link not found")
       launch_video_link = rocket
     } else {
-      console.log("Video ID extracted from video link")
-      console.log(launch_video_link.split(/[\s/v=]+/))
       launch_video_link = create_video_link(launch_video_link.split(/[\s/v=]+/)
                                             [launch_video_link.split(/[\s/v=]+/).length-1])
     }
@@ -53,10 +49,10 @@ const Launch: FC<LaunchProps> = ({data}: any) => {
             <Typography gutterBottom variant="h5" component="h2">
               Mission: Falcon
             </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
+            {/* <Typography variant="body2" color="textSecondary" component="p">
               Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
               across all continents except Antarctica
-            </Typography>
+            </Typography> */}
           </CardContent>
         </CardActionArea>
         <CardActions>

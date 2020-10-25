@@ -7,6 +7,6 @@ export const launchCardStyles = makeStyles({
       marginTop:20
     },
     media: {
-      height: 140,
+      height: 200,
     },
 });
