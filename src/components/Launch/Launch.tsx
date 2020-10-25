@@ -47,7 +47,10 @@ const Launch: FC<LaunchProps> = ({data}: any) => {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
-              Mission: Falcon
+              Mission: {launch.mission_name} ({launch.launch_year})
+            </Typography>
+            <Typography gutterBottom variant="subtitle1" component="h2" style={{color:"#9e9e9e"}}>
+              {launch.launch_date_local}
             </Typography>
             {/* <Typography variant="body2" color="textSecondary" component="p">
               Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
