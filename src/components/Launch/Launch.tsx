@@ -10,6 +10,8 @@ import {LaunchesQuery} from "./../../generated/graphql"
 // Assets.
 import {launchCardStyles} from "./Launch.style"
 import rocket from "../../static/images/rocket.jpg"
+import "./Launch.scss"
+import { get } from 'https';
 
 type LaunchProps = {
   data: LaunchesQuery
@@ -21,6 +23,29 @@ const Launch: FC<LaunchProps> = ({data}: any) => {
     const classes = launchCardStyles();
     console.log("Single Launch Information")
     console.log(data)
+
+    // Launch flags: Success, Failed or Unknown.
+    const check_launch_status = (launch:any) => {
+      if (launch.launch_success === true){
+        return (
+          <Button className="successFlag" variant="contained" size="small" disabled={true}>
+            Success
+          </Button>
+        )
+      } else if (launch.launch_success === false) {
+        return (
+          <Button className="failedFlag" variant="contained" size="small" disabled={true}>
+            Fail
+          </Button>
+        )
+      }else {
+        return (
+          <Button variant="contained" size="small" disabled={true}>
+            N/A
+          </Button>
+        )
+      }
+    }
 
     // Creating Video link.
     const create_video_link = (video_id:string) => {
@@ -36,8 +61,12 @@ const Launch: FC<LaunchProps> = ({data}: any) => {
                                             [launch_video_link.split(/[\s/v=]+/).length-1])
     }
 
+    const get_launch_detail = () => {
+      console.log("Getting launch details")
+    }
+
     return (
-        <Card className={classes.root}>
+        <Card className={classes.root} onClick={get_launch_detail}>
         <CardActionArea>
           <CardMedia component="iframe"
             className={classes.media}
@@ -58,10 +87,17 @@ const Launch: FC<LaunchProps> = ({data}: any) => {
             </Typography> */}
           </CardContent>
         </CardActionArea>
-        <CardActions>
-          <Button size="small" color="primary">
+        <CardActions className={classes.action_container}>
+          {/* <Button size="small" color="primary">
             Learn More
-          </Button>
+          </Button> */}
+          {
+            check_launch_status(launch)
+          }
+          {/* <Button className="successFlag" variant="contained" size="small" disabled={true}>
+            Success
+          </Button> */}
+
         </CardActions>
       </Card>
     )
