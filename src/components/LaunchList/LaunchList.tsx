@@ -18,7 +18,10 @@ const LaunchList: FC<LaunchListProps> = ({data}:any) => {
     console.log(launches)
     return (
         <div className="launch_list_container">
-            <Grid container justify="center" alignItems="center" spacing={0}>
+            <Grid container spacing={0}
+                            alignItems="center"
+                            justify="center">
+
                     {launches.length > 0 && launches.map((launch:any)=>(
                         <Grid item sm={4} md={4} lg={4} key={launch}>  
                         <AnimationWrapper config={{
