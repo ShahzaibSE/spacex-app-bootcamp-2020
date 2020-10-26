@@ -1,13 +1,14 @@
 import React, {useState} from 'react'
 import {useLaunchesQuery} from "../../generated/graphql"
 import Grid from "@material-ui/core/Grid"
-import LinearProgress from '@material-ui/core/LinearProgress'
+import Backdrop from "@material-ui/core/Backdrop"
+import CircularProgress from '@material-ui/core/CircularProgress'
 import MuiAlert, { AlertProps } from '@material-ui/lab/Alert';
 import Snackbar from '@material-ui/core/Snackbar';
 // Launch list component.
 import LaunchList from "./LaunchList"
 // Assets.
-import {launchlist_container_error_message} from "./LaunchList.container.style"
+import {backdrop_loader_styles} from "./LaunchList.container.style"
 
 function Alert(props: AlertProps) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -16,7 +17,7 @@ function Alert(props: AlertProps) {
 const LaunchListContainerComponent = () => {
     const { data, error, loading } = useLaunchesQuery()
     const [open, setOpen] = useState(true)
-    const classes = launchlist_container_error_message()
+    const classes = backdrop_loader_styles()
 
     const handleClose = (event?: React.SyntheticEvent, reason?: string) => {
         if (reason === 'clickaway') {
@@ -30,9 +31,9 @@ const LaunchListContainerComponent = () => {
         return (
             <Grid container>
                <Grid item sm={12} md={12} lg={12}>
-                    <div style={{width:"100%"}}>
-                        <LinearProgress/>
-                    </div>
+                    <Backdrop className={classes.backdrop} open={open} onClick={handleClose}>
+                            <CircularProgress color="inherit" />
+                    </Backdrop>
                 </Grid> 
             </Grid>
         )

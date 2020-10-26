@@ -1,4 +1,4 @@
-import { makeStyles, Theme } from '@material-ui/core/styles';
+import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 
 export const launchlist_container_error_message = makeStyles((theme: Theme) => ({
     root: {
@@ -8,3 +8,12 @@ export const launchlist_container_error_message = makeStyles((theme: Theme) => (
       },
     },
 }));
+
+export const backdrop_loader_styles = makeStyles((theme: Theme) =>
+      createStyles({
+        backdrop: {
+          zIndex: theme.zIndex.drawer + 1,
+          color: '#fff',
+        },
+      }),
+);
