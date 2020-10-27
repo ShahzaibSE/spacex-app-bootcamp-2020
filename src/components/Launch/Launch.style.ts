@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import {grey, green} from "@material-ui/core/colors"
 
 export const launchCardStyles = makeStyles({
@@ -23,3 +23,16 @@ export const launchCardStyles = makeStyles({
       background: "#32d832"
     }
 });
+
+export const dialogStyles = makeStyles((theme: Theme) =>
+      createStyles({
+        appBar: {
+          position: 'relative',
+          backgroundColor: grey[900]
+        },
+        title: {
+          marginLeft: theme.spacing(2),
+          flex: 1,
+        },
+      }),
+);
