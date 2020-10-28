@@ -23,6 +23,8 @@ import {LaunchesQuery} from "./../../generated/graphql";
 import {launchCardStyles, dialogStyles} from "./Launch.style"
 import rocket from "../../static/images/rocket.jpg"
 import "./Launch.scss"
+//Components.
+import LaunchDetailsContainerComponent from "../LaunchDetails/LaunchDetails.container"
 
 type LaunchProps = {
   data: LaunchesQuery
@@ -43,8 +45,9 @@ const Launch: FC<LaunchProps> = ({data}: any) => {
     const classes = launchCardStyles();
     const dialog_classes = dialogStyles();
     const [isDialogOpen, setDialogOpen] = useState(false)
-    console.log("Single Launch Information")
-    console.log(data)
+
+    console.log("Single Launch Info")
+    console.log(launch)
 
     // Launch flags: Success, Failed or Unknown.
     const check_launch_status = (launch:any) => {
@@ -140,7 +143,7 @@ const Launch: FC<LaunchProps> = ({data}: any) => {
             </Typography>
           </Toolbar>
         </AppBar>
-        <List>
+        {/* <List>
           <ListItem button>
             <ListItemText primary="Phone ringtone" secondary="Titania" />
           </ListItem>
@@ -148,7 +151,8 @@ const Launch: FC<LaunchProps> = ({data}: any) => {
           <ListItem button>
             <ListItemText primary="Default notification ringtone" secondary="Tethys" />
           </ListItem>
-        </List>
+        </List> */}
+        <LaunchDetailsContainerComponent launch={launch}/>
       </Dialog>
       </div>
     )

@@ -749,6 +749,9 @@ export type LaunchInfoQuery = (
     )>, links?: Maybe<(
       { __typename?: 'LaunchLinks' }
       & Pick<LaunchLinks, 'article_link' | 'flickr_images' | 'video_link'>
+    )>, rocket?: Maybe<(
+      { __typename?: 'LaunchRocket' }
+      & Pick<LaunchRocket, 'rocket_id' | 'rocket_name' | 'rocket_type'>
     )> }
   )> }
 );
@@ -767,6 +770,9 @@ export type LaunchesQuery = (
     )>, links?: Maybe<(
       { __typename?: 'LaunchLinks' }
       & Pick<LaunchLinks, 'article_link' | 'video_link' | 'flickr_images'>
+    )>, rocket?: Maybe<(
+      { __typename?: 'LaunchRocket' }
+      & Pick<LaunchRocket, 'rocket_id' | 'rocket_name' | 'rocket_type'>
     )> }
   )>>> }
 );
@@ -792,6 +798,11 @@ export const LaunchInfoDocument = gql`
     }
     details
     flight_number
+    rocket {
+      rocket_id
+      rocket_name
+      rocket_type
+    }
   }
 }
     `;
@@ -843,6 +854,11 @@ export const LaunchesDocument = gql`
     }
     mission_id
     mission_name
+    rocket {
+      rocket_id
+      rocket_name
+      rocket_type
+    }
   }
 }
     `;

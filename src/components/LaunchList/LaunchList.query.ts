@@ -22,6 +22,11 @@ export const query_launch_list = gql `
             }
             mission_id
             mission_name
+            rocket {
+                rocket_id
+                rocket_name
+                rocket_type
+            }
         }
     } 
 `
