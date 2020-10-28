@@ -23,6 +23,15 @@ const LaunchDetailsContainerComponent:FC<LaunchDetailsContainerProps> = ({launch
     const classes = launchlist_container_error_message()
     const [open, setOpen] = useState(true)
 
+    try {
+       let launch_details: any
+       if (data != null) {
+           launch_details = data.launch
+       }
+    }catch {
+        throw(new Error("Empty launch object found"))
+    }
+
     console.log("Launch Details")
     console.log(data)
 
@@ -63,8 +72,7 @@ const LaunchDetailsContainerComponent:FC<LaunchDetailsContainerProps> = ({launch
 
     return (
         <div>
-            Launch Details.
-            {/* <LaunchDetails data={{launches}:data}/> */}
+            <LaunchDetails data={data.launch}/>
         </div>
     )
 }

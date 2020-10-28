@@ -11,7 +11,7 @@ function Alert(props: AlertProps) {
 }
 
 type LaunchDetailsProps = {
-    data: LaunchInfoQuery
+    data: any
 }
 
 const LaunchDetails: React.FC<LaunchDetailsProps> = ({data}) => {
@@ -29,7 +29,7 @@ const LaunchDetails: React.FC<LaunchDetailsProps> = ({data}) => {
     console.log("Single launch details")
     console.log(data)
     //
-    if(!data.launch){
+    if(!data){
         return(
             <Snackbar open={open}>
                 <Alert onClose={handleClose} severity="error">
@@ -41,7 +41,7 @@ const LaunchDetails: React.FC<LaunchDetailsProps> = ({data}) => {
     return (
         <div>
             <h1>Launch Details</h1>
-            <h2>{data.launch.details}</h2>
+            <h2>{data.details}</h2>
         </div>
     )
 }
