@@ -25,6 +25,8 @@ export const launch_details = gql `
                 rocket_name
                 rocket_type
             }
+            mission_id
+            mission_name
         }
     }  
 `

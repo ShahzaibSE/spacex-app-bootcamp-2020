@@ -25,6 +25,8 @@ import rocket from "../../static/images/rocket.jpg"
 import "./Launch.scss"
 //Components.
 import LaunchDetailsContainerComponent from "../LaunchDetails/LaunchDetails.container"
+// Utils helper functions.
+import {create_video_link} from "../launch.utils"
 
 type LaunchProps = {
   data: LaunchesQuery
@@ -72,13 +74,6 @@ const Launch: FC<LaunchProps> = ({data}: any) => {
       }
     }
 
-    // Creating Video link.
-    const create_video_link = (video_id:string) => {
-      let hostname = "youtube"
-      let video_link = `https://www.${hostname}.com/embed/${video_id}`
-      return video_link
-    }
-
     if (launch_video_link == null){
       launch_video_link = rocket
     } else {
@@ -104,7 +99,7 @@ const Launch: FC<LaunchProps> = ({data}: any) => {
             className={classes.media}
             // src={"https://www.youtube.com/watch?v=JuZBOUMsYws".replace("watch?v=", "embed/")}
             src={launch_video_link}
-            title="SpaceX Launch Mission"
+            title={data.mission_name}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
@@ -139,7 +134,7 @@ const Launch: FC<LaunchProps> = ({data}: any) => {
               <CloseIcon />
             </IconButton>
             <Typography variant="h6" className={dialog_classes.title}>
-              Sound
+              {launch.mission_name}
             </Typography>
           </Toolbar>
         </AppBar>
