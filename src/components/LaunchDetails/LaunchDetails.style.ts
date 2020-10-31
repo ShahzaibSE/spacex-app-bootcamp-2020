@@ -15,12 +15,36 @@ export const launchlist_container_error_message = makeStyles((theme: Theme) => (
 
 export const launchlist_video_container = makeStyles((theme: Theme) => ({
       root: {
-        maxWidth: 1000,
+        minWidth: 600,
         marginBottom:20,
         marginTop:20
       },
       video_container: {
         height:400,
+        // width:600
+      },
+      image_container: {
+        marginTop:20,
+        height:400,
         width:600
       }
+}))
+
+export const launch_rocket_information_container = makeStyles((theme: Theme) => ({
+    root: {
+      minWidth: 275,
+      marginTop: 20,
+      width:600
+    },
+    bullet: {
+      display: 'inline-block',
+      margin: '0 2px',
+      transform: 'scale(0.8)',
+    },
+    title: {
+      fontSize: 14,
+    },
+    pos: {
+      marginBottom: 12,
+    },
 }))
