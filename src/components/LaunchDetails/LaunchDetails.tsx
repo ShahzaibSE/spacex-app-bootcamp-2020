@@ -3,14 +3,14 @@ import MuiAlert, { AlertProps } from '@material-ui/lab/Alert';
 import Snackbar from '@material-ui/core/Snackbar';
 import Grid from "@material-ui/core/Grid";
 import  {CardMedia, Card, CardContent, CardActionArea, Typography} from '@material-ui/core';
-import {Bounce} from "react-awesome-reveal"
+import {Bounce} from "react-awesome-reveal";
+import {AnimationWrapper} from "react-hover-animation";
 // GraphQL Query.
 import {LaunchInfoQuery} from "../../generated/graphql";
 // Assets.
 import {launchlist_container_error_message, launchlist_video_container, 
         launch_rocket_information_container} from "./LaunchDetails.style";
 import rocket from "../../static/images/rocket.jpg";
-import "./LaunchDetails.scss"
 // Utils helper functions.
 import {create_video_link} from "../launch.utils";
 
@@ -109,7 +109,12 @@ const LaunchDetails: React.FC<LaunchDetailsProps> = ({data}) => {
                 <Grid item sm={12} md={2} lg={2}>
                    <Grid container direction="column" alignItems="center" justify="center" alignContent="center">
                     <Grid item sm={12} md={2} lg={2}>   
+
                     <Bounce>
+                    <AnimationWrapper config={{
+                                                    transform:{initial:'scale(1)',onHover:'scale(1.1)'},
+                                                    opacity: {initial:'1',onHover:'1'}
+                                                }}>     
                     <Card variant="outlined" className={rocket_information_container_classes.root}>
                             <CardContent>
                                 <Typography
@@ -151,13 +156,19 @@ const LaunchDetails: React.FC<LaunchDetailsProps> = ({data}) => {
                                 
                             </CardContent>
                         </Card>
+                        </AnimationWrapper>
                         </Bounce>
                         </Grid>
                 {/* </Grid>
 
                 <Grid item sm={12} md={2} lg={2}> */}
                    <Grid item sm={12} md={2} lg={2}>
-                     <Bounce>  
+
+                    <Bounce>  
+                    <AnimationWrapper config={{
+                                                    transform:{initial:'scale(1)',onHover:'scale(1.1)'},
+                                                    opacity: {initial:'1',onHover:'1'}
+                                                }}>     
                     <Card variant="outlined" className={rocket_information_container_classes.root}>
                         <CardContent>
                             <Typography
@@ -188,6 +199,7 @@ const LaunchDetails: React.FC<LaunchDetailsProps> = ({data}) => {
                             
                         </CardContent>
                      </Card>
+                     </AnimationWrapper>
                      </Bounce>
                      </Grid>
                     </Grid>
