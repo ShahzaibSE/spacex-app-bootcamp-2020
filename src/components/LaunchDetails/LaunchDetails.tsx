@@ -76,7 +76,7 @@ const LaunchDetails: React.FC<LaunchDetailsProps> = ({data}) => {
                                             </CardActionArea>
                                             { data.details != null ?
                                             <CardContent>
-                                                <Typography style={{fontWeight:"bold"}}  
+                                                <Typography   
                                                             variant="body1" color="textSecondary" component="p">
                                                 {data.details != null ? data.details + "." : ''}
                                                 </Typography>
@@ -94,7 +94,7 @@ const LaunchDetails: React.FC<LaunchDetailsProps> = ({data}) => {
                                         </CardActionArea>
                                         { data.details != null ?
                                         <CardContent>
-                                            <Typography style={{fontWeight:"bold"}}  
+                                            <Typography  
                                                         variant="body1" color="textSecondary" component="p">
                                             {data.details != null ? data.details + "." : ''}
                                             </Typography>
