@@ -61,39 +61,45 @@ const LaunchDetails: React.FC<LaunchDetailsProps> = ({data}) => {
     return (
         <div>
           <Grid container>  
-                <Grid item sm={6} md={6} lg={6} spacing={2}>
+                <Grid item sm={6} md={6} lg={6} spacing={3}>
                     <Grid container direction="column" justify="center" alignContent="center" alignItems="center">
                             {
                                 data.links.video_link !== null 
                                     ? 
-                                    <Grid item sm={12} md={12} lg={12}>
+                                    <Grid item sm={12} md={6} lg={6}>
+                                       <Bounce> 
                                         <Card className={launch_video_container_classes.root}>
                                             <CardActionArea>
                                                 <CardMedia  className={launch_video_container_classes.video_container}
                                                             component="iframe" 
                                                             src={launch_video_link}/>
                                             </CardActionArea>
+                                            { data.details != null ?
                                             <CardContent>
-                                                <Typography style={{fontWeight:"bold"}} 
+                                                <Typography style={{fontWeight:"bold"}}  
                                                             variant="body1" color="textSecondary" component="p">
                                                 {data.details != null ? data.details + "." : ''}
                                                 </Typography>
-                                            </CardContent> 
+                                            </CardContent>: '' 
+                                            } 
                                         </Card>
+                                       </Bounce> 
                                     </Grid>    
                                     :
-                                    <Grid item sm={12} md={12} lg={12}>
+                                    <Grid item sm={12} md={6} lg={6}>
                                      <Bounce>   
                                     <Card className={launch_video_container_classes.image_container}>
                                        <CardActionArea>  
                                         <img src={rocket} alt="SpaceX Rocket" />
                                         </CardActionArea>
+                                        { data.details != null ?
                                         <CardContent>
                                             <Typography style={{fontWeight:"bold"}}  
                                                         variant="body1" color="textSecondary" component="p">
                                             {data.details != null ? data.details + "." : ''}
                                             </Typography>
-                                        </CardContent>        
+                                        </CardContent>: '' 
+                                        }      
                                     </Card>
                                     </Bounce>
                                     </Grid>
@@ -187,6 +193,7 @@ const LaunchDetails: React.FC<LaunchDetailsProps> = ({data}) => {
                     </Grid>
                 </Grid>
            </Grid>
+           <br/>
         </div>
     )
 }

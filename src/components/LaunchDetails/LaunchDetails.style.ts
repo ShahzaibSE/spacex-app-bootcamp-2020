@@ -16,8 +16,10 @@ export const launchlist_container_error_message = makeStyles((theme: Theme) => (
 export const launchlist_video_container = makeStyles((theme: Theme) => ({
       root: {
         minWidth: 600,
+        maxWidth:600,
         marginBottom:20,
-        marginTop:20
+        marginTop:20,
+        marginLeft:20
       },
       video_container: {
         height:400,
@@ -33,8 +35,8 @@ export const launchlist_video_container = makeStyles((theme: Theme) => ({
 export const launch_rocket_information_container = makeStyles((theme: Theme) => ({
     root: {
       minWidth: 275,
+      minHeight:300,
       marginTop: 20,
-      width:600
     },
     bullet: {
       display: 'inline-block',
