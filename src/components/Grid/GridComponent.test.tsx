@@ -12,6 +12,6 @@ describe("<GridComponent/> component", ()=>{
     ))
 
     it("check if <Header/> component renders", ()=>{
-        expect(container.containsMatchingElement(<Header/>)).toMatchSnapshot()
+        expect(container.containsMatchingElement(<Header/>)).toEqual(true)
     })
 })
