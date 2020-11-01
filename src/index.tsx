@@ -24,4 +24,4 @@ ReactDOM.render(
 // serviceWorker.unregister();
 // 
 // -- Custom Service Worker -- //
-// swDev()
+swDev()
