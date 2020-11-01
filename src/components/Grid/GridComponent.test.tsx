@@ -8,7 +8,7 @@ describe("<GridComponent/> component", ()=>{
     let container: any;
 
     beforeEach(()=>(
-        container = mount(<GridComponent/>)
+        container = shallow(<GridComponent/>)
     ))
 
     it("check if <Header/> component renders", ()=>{
