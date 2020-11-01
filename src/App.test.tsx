@@ -11,6 +11,10 @@ describe("App root component", ()=>{
         container = shallow(<App/>)
     ))
 
+    it("testing UI of <App/>", ()=>{
+        expect(container).toMatchSnapshot()
+    })
+
     it("at least one div to be found", ()=>{
         expect(container.find("div").length).toEqual(1)
     })
