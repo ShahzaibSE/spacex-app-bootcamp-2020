@@ -24,4 +24,6 @@ ReactDOM.render(
 // serviceWorker.unregister();
 // 
 // -- Custom Service Worker -- //
-swDev()
+setTimeout(()=>{
+  swDev()
+}, 5000)
