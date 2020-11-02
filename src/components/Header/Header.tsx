@@ -32,7 +32,7 @@ const Header = () => {
                         <Typography className={classes.title} variant="h6" noWrap>
                                 ＳｐａｃｅＸ
                         </Typography>
-                            <div className={classes.search}>
+                            {/* <div className={classes.search}>
                                 <div className={classes.searchIcon}>
                                 <SearchIcon />
                                 </div>
@@ -44,7 +44,7 @@ const Header = () => {
                                 }}
                                 inputProps={{ 'aria-label': 'search' }}
                                 />
-                            </div>
+                            </div> */}
                         </Toolbar>
                     </AppBar>
                 </div>
