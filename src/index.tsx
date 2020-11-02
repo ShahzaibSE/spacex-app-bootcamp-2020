@@ -6,7 +6,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import swDev from "./swDev"
 
-const client = new ApolloClient({
+export const client = new ApolloClient({
   uri: "http://spacexdata.herokuapp.com/graphql",
   cache: new InMemoryCache()
 })
