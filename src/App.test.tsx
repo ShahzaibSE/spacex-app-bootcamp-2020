@@ -3,6 +3,7 @@ import {shallow, mount} from "enzyme"
 // Component.
 import GridComponent from "./components/Grid/GridComponent"
 import App from "./App"
+import {MockedProvider} from "@apollo/client/testing"
 
 describe("App root component", ()=>{
     let container: any;
