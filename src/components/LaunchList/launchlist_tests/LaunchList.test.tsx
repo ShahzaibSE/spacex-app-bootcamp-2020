@@ -5,7 +5,7 @@ import LaunchList from "../LaunchList";
 import {MockedProvider} from "@apollo/client/testing";
 import {gql} from "@apollo/client";
 
-export const GET_LAUNCH_QUERY = gql`
+export const GET_LAUNCHES_QUERY = gql`
 query launches {
     launches {
         flight_number
@@ -22,7 +22,7 @@ describe("<LaunchList/> tests", ()=>{
     const launchlist_mock = [
         {
             request:{
-                query: GET_LAUNCH_QUERY,
+                query: GET_LAUNCHES_QUERY,
                 variables: {
                    data: [{flight_number:1,
                     mission_name:"Falcon"}]
